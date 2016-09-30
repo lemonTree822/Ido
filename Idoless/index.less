@@ -1,0 +1,83 @@
+//html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img{ margin:0; padding:0; }
+//ul li { list-style:none;}
+//fieldset, img { border:none; }
+//@font-face {
+//  font-family: Quicksand-Bold;
+//  src: url(font/Quicksand-Bold.otf);
+//}
+//body {font:12px/18px "Quicksand-Bold"}
+//html,body{
+//  height: 100%;
+//  width: 100%;
+//  overflow: hidden;
+//}
+a{ 
+    text-decoration:none;font-size: 12px;font-family: "微软雅黑";color: #999;
+    }
+#fucShow(@w:100%, @h:100%,@T:0, @bg:0, @bgL:100%, @bgT:100%){
+    width: @w;height: @h;position: absolute;top:@T;
+    background: @bg left top; background-size:@bgL @bgT;
+}
+#fucChild(@l:0,@t:0,@op:1){
+    left: @l;top: @t; opacity: @op;
+}
+/*# header*/
+.header{
+    width: 100%;height: 100%;position: relative;
+    &>img{
+      position: absolute;left: 50%;top:50%;margin-top:-25px; margin-left: -45px;height: 30px;  
+    }
+    .top a{
+        position: absolute; line-height: 20px; margin-top:5px;right: 0;
+        &:hover{
+            color: black;
+        }
+    }
+}
+/*# nav*/
+.nav{
+    position: absolute;width:100%;display: flex;border-bottom: 5px solid #c5c1ac;height: 30px;line-height: 30px;top:65px;
+    p{
+        width:72%;margin: auto;
+        a{
+            padding: 0 10px;
+        }
+    }
+}
+/*# banner*/
+.banner{
+    display: flex;width: 100%;height: 87%;position: relative;
+    position: relative;overflow: hidden;
+    #show1{
+      #fucShow(100%,100%,0,url(img/bak0.jpg));
+    }
+    #show2{
+      #fucShow(100%,100%,100%,url(img/20140617133858_8750.jpg));
+      & img:nth-child(1){
+          #fucChild(@l:36%,@t:0,@op:1);
+      }
+      & img:nth-child(2){
+          #fucChild(@l:36%,@t:20%,@op:1);
+      }
+    }
+    #show3{
+      #fucShow(100%,100%,200%,url(img/20140617133905_7031.jpg));
+      & img:nth-child(1){
+          #fucChild(@l:40%,@t:60%,@op:1);
+      }
+      & img:nth-child(2){
+          #fucChild(@l:40%,@t:80%,@op:1);
+      }
+    }
+    #show4{
+      #fucShow(100%,100%,300%,url(img/bak6.jpg));
+      img{
+        &:nth-child(1){
+           #fucChild(@l:43%,@t:80%,@op:0);
+        }
+      }
+    }
+    img{
+        position: absolute;
+    }
+}
